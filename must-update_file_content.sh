@@ -1,15 +1,17 @@
 #!/bin/zsh
 export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:$PATH"
 
-# clear session cache before running
-setopt NULL_GLOB; rm -f ~/.openclaw/agents/main/sessions/must-update-file.jsonl*; unsetopt NULL_GLOB
+# fetch Google Sheet CSV
+SHEET_DATA=$(curl -sL "https://docs.google.com/spreadsheets/d/1VsRoh9Wg3TSAGJNtJHnovIqxzqKT-1ti1xbM7_DPEG0/export?format=csv&gid=1433072521")
 
-# analyze Google Sheet
-SHEET_DATA=$(curl -sL "https://docs.google.com/spreadsheets/d/1VsRoh9Wg3TSAGJNtJHnovIqxzqKT-1ti1xbM7_DPEG0/export?format=csv&gid=0")
+PROMPT="Read the following CSV data from the task spreadsheet. Use win=completed, tie=in progress, lost=incomplete. Indicate KPIs — summarize what tasks are completed, in progress, and incomplete. Highlight anything urgent or needing attention.
 
-ANALYSIS=$(/Users/jayagent/.nvm/versions/node/v22.22.0/bin/openclaw agent --session-id must-update-file -m "Read the following CSV data from the task spreadsheet. Use win=completed, tie=in progress, lost=incomplete. Indicate KPIs — summarize what tasks are completed, in progress, and incomplete. Highlight anything urgent or needing attention.
+$SHEET_DATA"
 
-$SHEET_DATA" 2>&1 | grep -v "Gateway agent failed" | grep -v "falling back" | grep -v "gateway closed" | grep -v "loopback" | grep -v "compaction")
+# run ollama directly
+ANALYSIS=$(curl -s http://127.0.0.1:11434/api/generate \
+  -d "{\"model\":\"qwen2.5:7b\",\"prompt\":$(echo "$PROMPT" | /usr/bin/jq -Rs .),\"stream\":false}" \
+  | /usr/bin/jq -r '.response')
 
 # save analysis to md file
 echo "$ANALYSIS" > /tmp/must-file.md
