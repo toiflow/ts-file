@@ -15,6 +15,21 @@ REQUIRED FORMAT FOR EACH ASSET ENTRY:
 
 ####### <!-- ANCHOR MARKER - ADD NEW ENTRIES BELOW -->
 
+## ASSET:ts-file 2026-06-06 → pipeline fully operational — all 4 jobs passing
+
+First end-to-end run confirmed. Drive API → Ollama → GitHub commit + must-file email all passing.
+
+| Job | Status | Detail |
+|---|---|---|
+| `fetch` | ✅ | Drive API exported sheet CSV — private sheet, OAuth authenticated |
+| `issue` | ✅ | Ollama analysis via `must-update-content.yml` |
+| `asset` | ✅ | Ollama analysis via `must-update-content.yml` |
+| `update` | ✅ | Committed to `would/` files + sent `must-file` email |
+
+**Fix required:** CSV data contained `(`, `"`, `$`, backtick characters breaking shell jq interpolation in `must-update-content.yml`. Fixed by sanitizing via `tr -d '"\\` `` ` `` `$()' | tr "'" ' '` in fetch step.
+
+**Schedule:** 6pm NZST (`0 6 * * *` UTC)
+
 ## ASSET:ts-file 2026-06-06 → pipeline initialised — Google Sheets + GitHub Actions
 
 Migrated from Mac-bound local script to GitHub Actions pipeline.
