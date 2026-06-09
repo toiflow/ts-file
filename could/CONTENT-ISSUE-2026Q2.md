@@ -1,4 +1,20 @@
 ####### <!-- ANCHOR MARKER - ADD ALL NEW ENTRIES DIRECTLY BELOW THIS LINE, NEVER DELETE OR EDIT PREVIOUS ENTRIES-->
+## FILE:ISSUE 2026-06-09 22:00
+- **Urgent or Overdue Tasks:** 
+  - DATA-PROTECTION: In progress with no clear completion date.
+  - MODULE: In progress with no clear completion date.
+  - Ollama recipe prompt manual test (classic/creative): Incomplete, needs Jay's decision on documentation location.
+
+- **Blockers or Risks Flagged in Incomplete Items:** 
+  - third party apis trace tokens: Lost, Reck needs to be shown by Jay how to check and trace the usage.
+  - claude design + : Lost, status unclear without further details.
+  - remove read only, considers multi-likes, key: one-sharedid, first-savedid: Lost, complex task with no clear next steps.
+
+- **Action Items Requiring a Decision:** 
+  - Ollama recipe prompt manual test (classic/creative): Jay needs to decide where to document the results.
+  - three hats rates: Parked but requires decision on proceeding or discarding.
+  - Label printer: Lost, needs further investigation and action plan.
+
 ## FILE:ISSUE 2026-06-09 21:39
 - **BUG** is marked as incomplete and has a blocker noted with Reck's involvement required.
 - **MODULE** and **DATA-PROTECTION** are tied/in progress but have no blockers or risks noted.
