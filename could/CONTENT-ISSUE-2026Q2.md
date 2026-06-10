@@ -1,4 +1,17 @@
 ####### <!-- ANCHOR MARKER - ADD ALL NEW ENTRIES DIRECTLY BELOW THIS LINE, NEVER DELETE OR EDIT PREVIOUS ENTRIES-->
+## FILE:ISSUE 2026-06-10 22:18
+- **ANY URGENT OR OVERDUE TASKS NEEDING IMMEDIATE ATTENTION**: 
+  - `third party apis trace tokens` is lost and requires immediate attention.
+  - `Notifications for cycle reset, 1 week` is lost but marked as in progress.
+
+- **BLOCKERS OR RISKS FLAGGED IN INCOMPLETE ITEMS**:
+  - `claude design +` is lost and has a risk associated with it; Jay needs to show Reck how to check the trace tokens.
+  - `third party apis trace tokens` requires Jay to show Reck how to check the used service if over 100 per day, which could lead to costs.
+
+- **ACTION ITEMS THAT REQUIRE A DECISION**:
+  - `three hats rates` is tied and needs a decision from park it status.
+  - `Label printer` is lost but should be addressed with Reck's assistance.
+
 ## FILE:ISSUE 2026-06-09 22:00
 - **Urgent or Overdue Tasks:** 
   - DATA-PROTECTION: In progress with no clear completion date.
