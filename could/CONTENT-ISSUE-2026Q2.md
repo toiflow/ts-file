@@ -1,4 +1,9 @@
 ####### <!-- ANCHOR MARKER - ADD ALL NEW ENTRIES DIRECTLY BELOW THIS LINE, NEVER DELETE OR EDIT PREVIOUS ENTRIES-->
+## FILE:ISSUE 2026-06-11 22:53
+- **Bug in saved recipe and ollama recipe prompt manual test are incomplete and may block further progress.**
+- **Third party APIs trace tokens task is lost with a blocker identified; Jay needs to show Reck how to check usage.**
+- **CLAUX design task is lost, requiring urgent attention for project alignment.**
+
 ## FILE:ISSUE 2026-06-10 22:18
 - **ANY URGENT OR OVERDUE TASKS NEEDING IMMEDIATE ATTENTION**: 
   - `third party apis trace tokens` is lost and requires immediate attention.
